@@ -1,0 +1,19 @@
+Get-WMIObject  -Class Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3}  `
+>> | Select-Object @{n="Unidad";e={($_.Name)}},
+>> @{n="Etiqueta";e={($_.VolumeName)}},
+>> @{n='Tamaño (MB)';e={"{0:n2}" -f ($_.size/1mb)}},
+>> @{n='Libre (MB)';e={"{0:n2}" -f ($_.freespace/1mb)}},
+>> @{n='% Libre';e={"{0:n2}" -f ($_.freespace/$_.size*100)}}
+
+
+Unidad      : C:
+Etiqueta    :
+Tamaño (MB) : 476.262,29
+Libre (MB)  : 231.007,99
+% Libre     : 48,50
+
+Unidad      : D:
+Etiqueta    : Nuevo vol
+Tamaño (MB) : 238.474,00
+Libre (MB)  : 77.810,93
+% Libre     : 32,63
