@@ -1,0 +1,9 @@
+df -m
+S.ficheros     bloques de 1M  Usados  Disponibles  Uso%  Montado en
+tmpfs                 390        2           389    1%   /run
+/dev/sda2            23967     9373         13351   42%   /
+tmpfs                1949        0          1949    0%   /dev/shm
+tmpfs                   5        1             5    7%   /run/lock
+efivars                 1        1             1    7%   /sys/firmware/efi/efivars
+/dev/sda1             1073        7          1067    1%   /boot/efi
+tmpfs                 390        1           390    1%   /run/user/1000
