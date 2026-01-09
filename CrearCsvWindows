@@ -1,0 +1,24 @@
+$datos = @(
+    [PSCustomObject]@{
+        Variable = "HOMEPATH"
+        Valor = $env:HOMEPATH
+        Significado = "Ruta relativa al directorio personal del usuario dentro del disco del sistema"
+    }
+    [PSCustomObject]@{
+        Variable = "USERNAME"
+        Valor = $env:USERNAME
+        Significado = "Nombre del usuario que ha iniciado sesión en el sistema"
+    }
+    [PSCustomObject]@{
+        Variable = "USERDOMAIN"
+        Valor = $env:USERDOMAIN
+        Significado = "Nombre del dominio o del equipo local al que pertenece el usuario"
+    }
+    [PSCustomObject]@{
+        Variable = "SystemDrive"
+        Valor = $env:SystemDrive
+        Significado = "Unidad donde está instalado el sistema operativo Windows"
+    }
+)
+
+$datos | Export-Csv "$env:USERPROFILE\Desktop\Env-Windows.csv" -NoTypeInformation -Encoding UTF8
